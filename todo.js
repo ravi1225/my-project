@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FlatList, StyleSheet, Text, View, Alert, Checkbox, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import { Colors } from './src/components/Colors';
 
 export default function Todo() {
 
@@ -45,8 +45,8 @@ export default function Todo() {
                         renderItem = {( { item }) => (
                             <View style={styles.flatlistView}>
                                 <TouchableOpacity>
-                                    <Icon name="checkbox-blank-circle-outline" size={30} color="#6495ED" />
-                                    <Icon name="checkbox-marked-circle-outline" size={30} color="#6495ED" />
+                                    <Icon name="checkbox-blank-circle-outline" size={30} color={Colors.CornflowerBlue} />
+                                    <Icon name="checkbox-marked-circle-outline" size={30} color={Colors.CornflowerBlue} />
                                 </TouchableOpacity>
                                 <Text style={styles.flatlistText}> {item.text} </Text>
                             </View>
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         fontSize: 25,
         borderBottomWidth: 0.5,
         minWidth: 1790,
-        borderBottomColor: 'lightgray',
+        borderBottomColor: Colors.lightgray,
     },
 
   });

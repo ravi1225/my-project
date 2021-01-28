@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import AddTodo from './src/components/AddTodo';
+import { Colors } from './src/components/Colors';
 
 
 
@@ -19,7 +20,7 @@ export default function heading (){
                         setModalVal(!modalVal)
                     }}
                 >
-                    <Icon name="pluscircleo" size={30} color="#6495ED" />
+                    <Icon name="pluscircleo" size={30} color={Colors.CornflowerBlue}/>
                 </TouchableOpacity>
         </View>
        
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        borderColor: 'black',
+        borderColor: Colors.black,
         marginTop: 5,
         paddingRight: 10,
     },

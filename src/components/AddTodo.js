@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Modal, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Colors } from './Colors';
+
+
 
 export default function AddTodo (props, { addTodos }){
 
@@ -28,7 +31,7 @@ export default function AddTodo (props, { addTodos }){
                 <View style={styles.thirdView}>
                     <TouchableOpacity 
                         onPress={(props) => {
-                            setModalVal(props.modalVal);
+                            setModalVal(flase);
                         }}
                     >
                         <Text style={styles.textStyle}>Cancel</Text>
@@ -68,13 +71,13 @@ const styles = StyleSheet.create({
         paddingTop: 15,
         paddingRight: 10,
         minWidth: 350,
-        borderColor: "lightgray",
+        borderColor: Colors.lightgray,
         
     },
 
     inputBox: {
         borderWidth: 1,
-        borderColor: "lightgray",
+        borderColor: Colors.lightgray,
         borderRadius: 10,
         height: 150,
         minWidth: 350,
@@ -95,7 +98,7 @@ const styles = StyleSheet.create({
     },
 
     textStyle: {
-        color: 'blue',
+        color: Colors.blue,
         fontSize: 20,
     }
   });
