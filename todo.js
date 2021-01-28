@@ -1,100 +1,90 @@
 import React, { useState } from 'react';
-import { FlatList, StyleSheet, Text, TextInput, View, Modal, TouchableOpacity } from 'react-native';
+import { FlatList, StyleSheet, Text, View, Alert, Checkbox, TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 export default function Todo() {
 
-    // const Abc =[
-    //     {
-    //         text: 'abc', key: 1, 
-    //     },
-    //     {
-    //         text: 'xyz', key: 2,
-    //     }
-    //  ];
+    // const [checked, setChecked] = useState(false);
+    const [todo, setTodo] = useState([
+         {
+             text: 'abc',  key: 1, check:false
+         },
+         {
+            text: 'xyz',  key: 2, check:false
+         },
+
+
+    ]);
+
+    const addTodos = (text) => {
+        if(text.trim().length >0)
+        {
+            setTodo((prevValue) => {
+                return[
+                    ...prevValue,
+                    {text : text.trim(), key: Math.random().toString(), check: 'false'}
+                ]
+            })
+        }
+        else {
+            Alert.alert('error!', 'List can\'t\ be empty', [
+                { text: Ok, onPress: () => console.log('Alert Closed')}
+            ])
+        }
+    }
 
     return (
-        // <View style={styles.first}>
-        //    <FlatList   
-        //         data={ Abc }
-        //         renderItem = {( { item }) => (
-        //             <Text> {item.Abc} </Text>
-        //         )}          
-        //    />        
-        // </View>
-
         <>
-        <Modal 
-            visible={true}
-            transparent={true}
-        >
-            <View style={styles.external_View}>
-                <View style={styles.internal_View}>
-                <Text style={styles.header_text}> Add Todo </Text>
-                <TextInput
-                    style={styles.input_Box}
-                />
-                <View style={styles.third_View}>
-                    <TouchableOpacity>
-                        <Text style={styles.text_style}>Cancel</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity>
-                        <Text style={styles.text_style}>Done</Text>
-                    </TouchableOpacity>
-                </View>  
-                </View>
+            {/* <View>  <AddTodo addTodos={ addTodos }/> </View> */}
+           
+            <View style={styles.first}>
+                             
+                <FlatList   
+                        data={ todo }
+                        renderItem = {( { item }) => (
+                            <View style={styles.flatlistView}>
+                                <TouchableOpacity>
+                                    <Icon name="checkbox-blank-circle-outline" size={30} color="#6495ED" />
+                                    <Icon name="checkbox-marked-circle-outline" size={30} color="#6495ED" />
+                                </TouchableOpacity>
+                                <Text style={styles.flatlistText}> {item.text} </Text>
+                            </View>
+                        )}          
+                />        
             </View>
-        </Modal>
-    </>
+        </>        
     );
 }
 
 
 
 const styles = StyleSheet.create({
-    external_View: {
-        // transparent: 'true'
-        padding: 5,
-        borderRadius: 20,
+    first: {
+        // borderWidth: 1,
+        flexDirection:'row',
+        justifyContent: 'space-around',
     },
 
-    internal_View: {
-        borderRadius: 15,
-        paddingRight: 5,
-        borderWidth: 1,
-        paddingBottom: 15,
-        paddingLeft: 10,
-        paddingTop: 15,
+    flatlistView: {
+        flexDirection:'row',
+        marginLeft: 10,
+        marginRight: 10,
+        // justifyContent: 'space-around',  
+    },
+
+    flatlistText:{
         paddingRight: 10,
-        borderColor: "lightgray",
-        
+        marginLeft: 10,
+        marginRight: 10,
+        marginBottom: 0.5,
+        fontSize: 25,
+        borderBottomWidth: 0.5,
+        minWidth: 1790,
+        borderBottomColor: 'lightgray',
     },
-
-    input_Box: {
-        borderWidth: 1,
-        borderColor: "lightgray",
-        borderRadius: 10,
-        height: 100,
-    },
-
-    third_View: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        paddingLeft: 10,
-        paddingRight: 10,
-    },
-
-    header_text: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        paddingBottom: 10,
-    },
-
-    text_style: {
-        color: 'blue',
-        fontSize: 20,
-    }
 
   });
+
+
   
