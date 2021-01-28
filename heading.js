@@ -35,7 +35,6 @@ export default function heading (){
 
 }
 
-
 const styles = StyleSheet.create({
     headingView: {
         flexDirection: 'row',
@@ -54,8 +53,10 @@ const styles = StyleSheet.create({
         marginRight: 10,
         
     }
-
 })
+
+
+
 
 
 

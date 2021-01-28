@@ -48,7 +48,6 @@ export default function AddTodo (props){
     )
 }
 
-
 const styles = StyleSheet.create({
     externalView: {
         flex: 1,
@@ -105,6 +104,9 @@ const styles = StyleSheet.create({
         fontSize: 20,
     }
   });
+
+
+
 
 
 

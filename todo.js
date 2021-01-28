@@ -54,8 +54,6 @@ export default function Todo() {
     );
 }
 
-
-
 const styles = StyleSheet.create({
     firstView: {
         flexDirection:'row',
@@ -78,8 +76,8 @@ const styles = StyleSheet.create({
         minWidth: 1790,
         borderBottomColor: Colors.lightgray,
     },
+});
 
-  });
 
 
   
