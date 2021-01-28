@@ -4,6 +4,7 @@ import { StyleSheet, Text, SafeAreaView, View } from 'react-native';
 import Heading from './heading';
 import Todo from './todo';
 import Constants from 'expo-constants';
+import { Colors } from './src/components/Colors';
 
 export default function App() {
   return (
@@ -23,8 +24,14 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
     marginTop: Constants.statusBarHeight
     
   },
 });
+
+
+
+
+
+

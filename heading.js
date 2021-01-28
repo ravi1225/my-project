@@ -10,22 +10,24 @@ export default function heading (){
 
     const [modalVal, setModalVal] = useState(false);
 
+    const handleClick = () => {
+        setModalVal(!modalVal)
+    }
+
     return (
         <>
         <View style={styles.headingView}>    
                 <Text style={styles.mainHeader}> Today </Text>
                 <TouchableOpacity 
                     style={styles.header_touchable}
-                    onPress={() => {
-                        setModalVal(!modalVal)
-                    }}
+                    onPress={handleClick}
                 >
                     <Icon name="pluscircleo" size={30} color={Colors.CornflowerBlue}/>
                 </TouchableOpacity>
         </View>
        
             {
-                modalVal?   <AddTodo  modalVal={modalVal}/> : null
+                modalVal?   <AddTodo  modalVal={modalVal} handleClick={ handleClick } /> : null
             }
         
         </>
@@ -54,3 +56,9 @@ const styles = StyleSheet.create({
     }
 
 })
+
+
+
+
+
+

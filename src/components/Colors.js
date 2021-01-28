@@ -8,4 +8,14 @@ export const Colors = {
     black: '#000000',
     blue: '#0000FF',
     CornflowerBlue: '#6495ED',
+    white: '#FFFFFF'
   };
+
+
+
+
+
+
+
+
+

@@ -5,10 +5,9 @@ import { Colors } from './src/components/Colors';
 
 export default function Todo() {
 
-    // const [checked, setChecked] = useState(false);
     const [todo, setTodo] = useState([
          {
-             text: 'abc',  key: 1, check:false
+            text: 'abc',  key: 1, check:false
          },
          {
             text: 'xyz',  key: 2, check:false
@@ -35,10 +34,8 @@ export default function Todo() {
     }
 
     return (
-        <>
-            {/* <View>  <AddTodo addTodos={ addTodos }/> </View> */}
-           
-            <View style={styles.first}>
+        <>       
+            <View style={styles.firstView}>
                              
                 <FlatList   
                         data={ todo }
@@ -60,8 +57,7 @@ export default function Todo() {
 
 
 const styles = StyleSheet.create({
-    first: {
-        // borderWidth: 1,
+    firstView: {
         flexDirection:'row',
         justifyContent: 'space-around',
     },
@@ -69,8 +65,7 @@ const styles = StyleSheet.create({
     flatlistView: {
         flexDirection:'row',
         marginLeft: 10,
-        marginRight: 10,
-        // justifyContent: 'space-around',  
+        marginRight: 10, 
     },
 
     flatlistText:{

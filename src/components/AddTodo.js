@@ -4,10 +4,9 @@ import { Colors } from './Colors';
 
 
 
-export default function AddTodo (props, { addTodos }){
+export default function AddTodo (props){
 
     const [text, setText] = useState('');
-    const [modalVal, setModalVal] = useState(false);
 
     const textInput= (val) =>{
         setText(val);
@@ -30,19 +29,14 @@ export default function AddTodo (props, { addTodos }){
                 />
                 <View style={styles.thirdView}>
                     <TouchableOpacity 
-                        onPress={(props) => {
-                            setModalVal(flase);
-                        }}
+                        onPress={props.handleClick}
                     >
                         <Text style={styles.textStyle}>Cancel</Text>
 
                     </TouchableOpacity>
 
                     <TouchableOpacity
-                        onPress={() => {
-                            setText('')
-                            addTodos(text)
-                        }}
+                        onPress={props.handleClick}
                     >
                         <Text style={styles.textStyle}>Done</Text>
                     </TouchableOpacity>
@@ -72,6 +66,15 @@ const styles = StyleSheet.create({
         paddingRight: 10,
         minWidth: 350,
         borderColor: Colors.lightgray,
+        backgroundColor: Colors.white,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 2,
+        elevation: 5
         
     },
 
@@ -102,3 +105,9 @@ const styles = StyleSheet.create({
         fontSize: 20,
     }
   });
+
+
+
+
+
+
