@@ -10,6 +10,7 @@ export default function heading (){
 
     const [modalVal, setModalVal] = useState(false);
 
+   
     const handleClick = () => {
         setModalVal(!modalVal)
     }
@@ -19,7 +20,7 @@ export default function heading (){
         <View style={styles.headingView}>    
                 <Text style={styles.mainHeader}> Today </Text>
                 <TouchableOpacity 
-                    style={styles.header_touchable}
+                    style={styles.headerTouchable}
                     onPress={handleClick}
                 >
                     <Icon name="pluscircleo" size={30} color={Colors.CornflowerBlue}/>
@@ -27,9 +28,9 @@ export default function heading (){
         </View>
        
             {
-                modalVal?   <AddTodo  modalVal={modalVal} handleClick={ handleClick } /> : null
+                modalVal?   <AddTodo  modalVal={modalVal} handleClick={handleClick}/> : null
             }
-        
+    
         </>
     )
 

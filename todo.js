@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
-import { FlatList, StyleSheet, Text, View, Alert, Checkbox, TouchableOpacity} from 'react-native';
+import { FlatList, StyleSheet, Text, View, Alert, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Colors } from './src/components/Colors';
 
-export default function Todo() {
+export default function Todo(props) {
+
+    
 
     const [todo, setTodo] = useState([
-         {
-            text: 'abc',  key: 1, check:false
-         },
-         {
-            text: 'xyz',  key: 2, check:false
-         },
-
-
+        {
+           text: 'abc',  key: 1, check:false
+        },
+        {
+           text: 'xyz',  key: 2, check:false
+        },
     ]);
+
 
     const addTodos = (text) => {
         if(text.trim().length >0)
@@ -31,10 +32,12 @@ export default function Todo() {
                 { text: Ok, onPress: () => console.log('Alert Closed')}
             ])
         }
-    }
+     }
 
+    
     return (
-        <>       
+        <> 
+        <View>
             <View style={styles.firstView}>
                              
                 <FlatList   
@@ -42,13 +45,19 @@ export default function Todo() {
                         renderItem = {( { item }) => (
                             <View style={styles.flatlistView}>
                                 <TouchableOpacity>
-                                    <Icon name="checkbox-blank-circle-outline" size={30} color={Colors.CornflowerBlue} />
-                                    <Icon name="checkbox-marked-circle-outline" size={30} color={Colors.CornflowerBlue} />
+                                    {
+                                        item.check?
+                                        <Icon name="checkbox-marked-circle-outline" size={30} color={Colors.CornflowerBlue} />
+                                        :
+                                        <Icon name="checkbox-blank-circle-outline" size={30} color={Colors.CornflowerBlue} />
+                                    }
+                                    
                                 </TouchableOpacity>
                                 <Text style={styles.flatlistText}> {item.text} </Text>
                             </View>
                         )}          
                 />        
+            </View>
             </View>
         </>        
     );
@@ -73,7 +82,7 @@ const styles = StyleSheet.create({
         marginBottom: 0.5,
         fontSize: 25,
         borderBottomWidth: 0.5,
-        minWidth: 1790,
+        minWidth:325,
         borderBottomColor: Colors.lightgray,
     },
 });

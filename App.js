@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
-import { StyleSheet, Text, SafeAreaView, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, SafeAreaView, View } from 'react-native';
 import Heading from './heading';
 import Todo from './todo';
 import Constants from 'expo-constants';

@@ -1,4 +1,3 @@
-import React from 'react';
 
 export const Colors = {
     green: '#03fc7b',

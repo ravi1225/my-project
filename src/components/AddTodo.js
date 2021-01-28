@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import { Modal, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { Colors } from './Colors';
 
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         minWidth: 350,
         borderColor: Colors.lightgray,
         backgroundColor: Colors.white,
-        shadowColor: "#000",
+        shadowColor: Colors.black,
         shadowOffset: {
             width: 0,
             height: 2
