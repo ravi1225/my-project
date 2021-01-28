@@ -10,16 +10,3 @@ export const Colors = {
     CornflowerBlue: '#6495ED',
     white: '#FFFFFF'
   };
-
-
-
-  
-
-
-
-
-
-
-
-
-

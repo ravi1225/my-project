@@ -77,7 +77,3 @@ const styles = StyleSheet.create({
         borderBottomColor: Colors.lightgray,
     },
 });
-
-
-
-  

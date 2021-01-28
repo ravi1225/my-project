@@ -29,9 +29,3 @@ const styles = StyleSheet.create({
     
   },
 });
-
-
-
-
-
-

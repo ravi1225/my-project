@@ -54,12 +54,3 @@ const styles = StyleSheet.create({
         
     }
 })
-
-
-
-
-
-
-
-
-
