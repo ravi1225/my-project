@@ -7,11 +7,7 @@ import Constants from "expo-constants";
 import { Colors } from "./src/components/Colors";
 
 export default function App() {
-  const [todo, setTodo] = useState([
-
-    // { text: 'abc', key: 1, check: false},
-    // { text: 'xyz', key: 2, check: false},
-  ]);
+  const [todo, setTodo] = useState([]);
 
   const addTodo = (text) => {
     if (text.trim().length > 0) {

@@ -20,33 +20,31 @@ export default function Todo(props) {
             renderItem={({ item }) => (
               <View style={styles.flatlistView}>
                 <TouchableOpacity onPress={() => props.changeCheck(item.key)}>
-                  {item.check ? (
-                    <Icon
-                      name="checkbox-marked-circle-outline"
-                      size={30}
-                      color={Colors.CornflowerBlue}
-                    />
-                  ) : (
-                    <Icon
-                      name="checkbox-blank-circle-outline"
-                      size={30}
-                      color={Colors.CornflowerBlue}
-                    />
-                  )}
+                  <Icon
+                    name={
+                      item.check
+                        ? "checkbox-marked-circle-outline"
+                        : "checkbox-blank-circle-outline"
+                    }
+                    size={30}
+                    color={Colors.CornflowerBlue}
+                  />
                 </TouchableOpacity>
 
-                { item.check ? 
-                (
-                    <View style={styles.touchView}>
-                      <Text style={styles.flatlistText1}> {item.text} </Text>
-                      <Octicons name="primitive-dot" size={30} color={Colors.green} />
-                    </View>
-                ) : (
-                  <View style={styles.touchView}>
-                    <Text style={styles.flatlistText}> {item.text} </Text>
-                    <Octicons name="primitive-dot" size={30} color={Colors.red} />
-                  </View>
-                )}
+                <View style={styles.touchView}>
+                  <Text
+                    style={
+                      item.check ? styles.flatlistText1 : styles.flatlistText
+                    }
+                  >
+                    {item.text}
+                  </Text>
+                  <Octicons
+                    name="primitive-dot"
+                    size={30}
+                    color={item.check ? Colors.green : Colors.red}
+                  />
+                </View>
               </View>
             )}
           />
@@ -65,11 +63,12 @@ const styles = StyleSheet.create({
   flatlistView: {
     flexDirection: "row",
     justifyContent: "space-around",
-    alignItems: 'center',
+    alignItems: "center",
     paddingVertical: 20,
     marginHorizontal: 15,
     minHeight: 70,
     borderBottomWidth: 0.5,
+    borderBottomColor: Colors.lightgray,
   },
 
   flatlistText: {
