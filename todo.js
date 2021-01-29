@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import Entypo from "react-native-vector-icons/Entypo";
+import Octicons from "react-native-vector-icons/Octicons";
 import { Colors } from "./src/components/Colors";
 
 export default function Todo(props) {
@@ -21,31 +21,32 @@ export default function Todo(props) {
               <View style={styles.flatlistView}>
                 <TouchableOpacity onPress={() => props.changeCheck(item.key)}>
                   {item.check ? (
-                    <View style={styles.touchView}>
-                      <Icon
-                        name="checkbox-marked-circle-outline"
-                        size={30}
-                        color={Colors.CornflowerBlue}
-                      />
-                      <Text style={styles.flatlistText1}> {item.text} </Text>
-                      <Entypo
-                        name="dot-single"
-                        size={30}
-                        color={Colors.green}
-                      />
-                    </View>
+                    <Icon
+                      name="checkbox-marked-circle-outline"
+                      size={30}
+                      color={Colors.CornflowerBlue}
+                    />
                   ) : (
-                    <View style={styles.touchView}>
-                      <Icon
-                        name="checkbox-blank-circle-outline"
-                        size={30}
-                        color={Colors.CornflowerBlue}
-                      />
-                      <Text style={styles.flatlistText}> {item.text} </Text>
-                      <Entypo name="dot-single" size={30} color={Colors.red} />
-                    </View>
+                    <Icon
+                      name="checkbox-blank-circle-outline"
+                      size={30}
+                      color={Colors.CornflowerBlue}
+                    />
                   )}
                 </TouchableOpacity>
+
+                { item.check ? 
+                (
+                    <View style={styles.touchView}>
+                      <Text style={styles.flatlistText1}> {item.text} </Text>
+                      <Octicons name="primitive-dot" size={30} color={Colors.green} />
+                    </View>
+                ) : (
+                  <View style={styles.touchView}>
+                    <Text style={styles.flatlistText}> {item.text} </Text>
+                    <Octicons name="primitive-dot" size={30} color={Colors.red} />
+                  </View>
+                )}
               </View>
             )}
           />
@@ -63,8 +64,12 @@ const styles = StyleSheet.create({
 
   flatlistView: {
     flexDirection: "row",
-    marginLeft: 10,
-    marginRight: 10,
+    justifyContent: "space-around",
+    alignItems: 'center',
+    paddingVertical: 20,
+    marginHorizontal: 15,
+    minHeight: 70,
+    borderBottomWidth: 0.5,
   },
 
   flatlistText: {
@@ -73,8 +78,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginBottom: 0.5,
     fontSize: 25,
-    borderBottomWidth: 0.5,
-    minWidth: 325,
+    minWidth: 335,
     borderBottomColor: Colors.lightgray,
   },
   flatlistText1: {
@@ -83,8 +87,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginBottom: 0.5,
     fontSize: 25,
-    borderBottomWidth: 0.5,
-    minWidth: 325,
+    minWidth: 330,
     borderBottomColor: Colors.lightgray,
     textDecorationLine: "line-through",
     opacity: 0.5,
@@ -93,7 +96,7 @@ const styles = StyleSheet.create({
   touchView: {
     flexDirection: "row",
     justifyContent: "space-around",
-    minHeight: 70,
-    paddingTop: 15,
+    marginHorizontal: 15,
+    marginBottom: 5,
   },
 });
