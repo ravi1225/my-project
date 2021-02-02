@@ -4,7 +4,7 @@ import Icon from "react-native-vector-icons/AntDesign";
 import AddTodo from "./src/components/AddTodo";
 import { Colors } from "./src/components/Colors";
 
-export default function heading({ addTodo }) {
+export default function heading({ addTodo, type }) {
   const [modalVal, setModalVal] = useState(false);
 
   const handleClick = () => {
@@ -14,10 +14,15 @@ export default function heading({ addTodo }) {
   return (
     <>
       <View style={styles.headingView}>
-        <Text style={styles.mainHeader}> Today </Text>
-        <TouchableOpacity style={styles.headerTouchable} onPress={handleClick}>
-          <Icon name="pluscircleo" size={30} color={Colors.CornflowerBlue} />
-        </TouchableOpacity>
+        <Text style={styles.mainHeader}> {type} </Text>
+        {type == "Today" ? (
+          <TouchableOpacity
+            style={styles.headerTouchable}
+            onPress={handleClick}
+          >
+            <Icon name="pluscircleo" size={30} color={Colors.CornflowerBlue} />
+          </TouchableOpacity>
+        ) : null}
       </View>
 
       {modalVal ? (

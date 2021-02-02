@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     height: 150,
     minWidth: 350,
-    padding: 10
+    padding: 10,
   },
 
   thirdView: {
