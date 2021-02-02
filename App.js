@@ -1,4 +1,5 @@
 import "react-native-gesture-handler";
+import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
 import { SafeAreaView, Alert } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
@@ -151,8 +152,11 @@ function MyTabs() {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <MyTabs />
-    </NavigationContainer>
+    <>
+      <StatusBar style="auto" />
+      <NavigationContainer>
+        <MyTabs />
+      </NavigationContainer>
+    </>
   );
 }
