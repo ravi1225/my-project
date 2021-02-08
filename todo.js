@@ -13,43 +13,39 @@ import { Colors } from "./src/components/Colors";
 
 export default function Todo(props) {
   return (
-    <>
-      <SafeAreaView style={styles.firstView}>
-        <FlatList
-          data={props.todo}
-          renderItem={({ item }) => (
-            <View style={styles.flatlistView}>
-              <TouchableOpacity onPress={() => props.changeCheck(item.key)}>
-                <Icon
-                  name={
-                    item.check
-                      ? "checkbox-marked-circle-outline"
-                      : "checkbox-blank-circle-outline"
-                  }
-                  size={30}
-                  color={Colors.CornflowerBlue}
-                />
-              </TouchableOpacity>
+    <SafeAreaView style={styles.firstView}>
+      <FlatList
+        data={props.todo}
+        renderItem={({ item }) => (
+          <View style={styles.flatlistView}>
+            <TouchableOpacity onPress={() => props.changeCheck(item.key)}>
+              <Icon
+                name={
+                  item.check
+                    ? "checkbox-marked-circle-outline"
+                    : "checkbox-blank-circle-outline"
+                }
+                size={30}
+                color={Colors.CornflowerBlue}
+              />
+            </TouchableOpacity>
 
-              <View style={styles.touchView}>
-                <Text
-                  style={
-                    item.check ? styles.flatlistText1 : styles.flatlistText
-                  }
-                >
-                  {item.text}
-                </Text>
-                <Octicons
-                  name="primitive-dot"
-                  size={30}
-                  color={item.check ? Colors.green : Colors.red}
-                />
-              </View>
+            <View style={styles.touchView}>
+              <Text
+                style={item.check ? styles.flatlistText1 : styles.flatlistText}
+              >
+                {item.text}
+              </Text>
+              <Octicons
+                name="primitive-dot"
+                size={30}
+                color={item.check ? Colors.green : Colors.red}
+              />
             </View>
-          )}
-        />
-      </SafeAreaView>
-    </>
+          </View>
+        )}
+      />
+    </SafeAreaView>
   );
 }
 

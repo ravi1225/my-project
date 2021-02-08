@@ -8,14 +8,12 @@ import { Colors } from "./src/components/Colors";
 
 export default function AllComponents({ type, addTodo, changeCheck, todo }) {
   return (
-    <>
-      <SafeAreaView style={styles.container}>
-        <Heading addTodo={addTodo} type={type} />
-        <View>
-          <Todo todo={todo} changeCheck={changeCheck} />
-        </View>
-      </SafeAreaView>
-    </>
+    <SafeAreaView style={styles.container}>
+      <Heading addTodo={addTodo} type={type} />
+      <View>
+        <Todo todo={todo} changeCheck={changeCheck} />
+      </View>
+    </SafeAreaView>
   );
 }
 
