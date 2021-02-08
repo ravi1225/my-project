@@ -1,9 +1,9 @@
 import "react-native-gesture-handler";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Colors } from "./components/Colors";
-import useAddTodo from "./customHooks/useAddTodo";
-import HomeScreen from "./HomeScreen";
+import { Colors } from "../components/Colors";
+import useAddTodo from "../customHooks/useAddTodo";
+import HomeScreen from './HomeScreen';
 import ActiveScreen from "./ActiveScreen";
 import ComplectedScreen from "./CompletedScreen";
 

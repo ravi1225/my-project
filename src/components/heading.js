@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
-import AddTodo from "./src/components/AddTodo";
-import { Colors } from "./src/components/Colors";
+import AddTodo from "./AddTodo";
+import { Colors } from "./Colors";
 
 export default function heading(props) {
   const [modalVal, setModalVal] = useState(false);

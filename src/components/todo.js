@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Octicons from "react-native-vector-icons/Octicons";
-import { Colors } from "./src/components/Colors";
+import { Colors } from "./Colors";
 
 export default function Todo(props) {
   return (

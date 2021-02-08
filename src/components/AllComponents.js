@@ -4,7 +4,7 @@ import { StyleSheet, SafeAreaView, View } from "react-native";
 import Heading from "./heading";
 import Todo from "./todo";
 import Constants from "expo-constants";
-import { Colors } from "./src/components/Colors";
+import { Colors } from "./Colors";
 
 export default function AllComponents({ type, addTodo, changeCheck, todo }) {
   return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native";
-import AllComponents from "../AllComponents";
+import AllComponents from "../components/AllComponents";
 
 export default function ComplectedScreen({ addTodo, changeCheck, todo }) {
     const [completed, setCompleted] = useState([]);
