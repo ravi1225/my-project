@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Alert } from "react-native";
 
 export default function useAddTodo() {
   const [todo, setTodo] = useState([]);
@@ -13,7 +12,7 @@ export default function useAddTodo() {
         ];
       });
     } else {
-      Alert.alert("List can't be empty");
+      alert("List can't be empty");
     }
   };
 
