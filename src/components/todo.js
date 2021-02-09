@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
     borderBottomColor: Colors.lightgray,
     textDecorationLine: "line-through",
     opacity: 0.5,
+    fontFamily: 'Nunito-Italic'
   },
 
   touchView: {
