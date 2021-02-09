@@ -10,6 +10,7 @@ export default function heading(props) {
   const handleClick = () => {
     setModalVal(!modalVal);
   };
+  
 
   return (
     <>
@@ -52,6 +53,7 @@ const styles = StyleSheet.create({
   mainHeader: {
     fontSize: 30,
     fontWeight: "bold",
+    fontFamily: "Nunito-Italic",
   },
   headerTouchable: {
     fontWeight: "bold",
