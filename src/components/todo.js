@@ -74,6 +74,8 @@ const styles = StyleSheet.create({
     fontSize: 25,
     minWidth: 335,
     borderBottomColor: Colors.lightgray,
+    fontFamily: "Nunito-ExtraLight",
+
   },
   flatlistText1: {
     paddingRight: 10,
@@ -85,6 +87,7 @@ const styles = StyleSheet.create({
     borderBottomColor: Colors.lightgray,
     textDecorationLine: "line-through",
     opacity: 0.5,
+    fontFamily: 'Nunito-ExtraLight',
   },
 
   touchView: {
